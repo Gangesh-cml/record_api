@@ -5,4 +5,6 @@ from rest_framework.serializers import ValidationError
 class recordSerializer(serializers.ModelSerializer):
     class Meta:
         model = record
-        fields = "__all__"
+        fields = ('id','title','description')
+
+

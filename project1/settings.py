@@ -135,6 +135,6 @@ Auth_USER_MODEL='auth.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,  # Set the default page size here (maximum records per page)
+    'PAGE_SIZE': 11,  # Set the default page size here (maximum records per page)
     'MAX_PAGE_SIZE': 100,  # Set the maximum page size (if needed)
 }
