@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+# this function is used to login the user and redirect on list page
 from django.shortcuts import render
 def loginpage(request):
     if request.method=='POST':
@@ -24,13 +24,14 @@ def loginpage(request):
 
     return render(request,'loginpage.html')
 
+# this function is used to logout the user
 def logout_user(request):
     logout(request)
     print('hello')
     messages.success(request,("You Were Successfully logout"))
     return redirect('login')
 
-
+# this function is used to register the new user
 def register(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -48,6 +49,7 @@ def register(request):
     return render(request,'signup.html')
 
 
+# this function is used to list all the record of the user
 @login_required(login_url="/login/")
 def list(request):
     current_user=request.user
@@ -60,6 +62,7 @@ def list(request):
     else:
         return redirect('login')
 
+# this function is used to update the record and save in database
 def update_record(request,id):
     queryset=record.objects.get(id=id)
     if request.method=="POST":
@@ -86,7 +89,8 @@ def delete_record(request,id):
     return redirect('/list/')
 
 
-# this function is created for adding the record in database 
+
+# this function is used to create new record and store in database 
 def add_record(request):
     current_user=request.user
     user_id=current_user.id
