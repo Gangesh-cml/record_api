@@ -5,6 +5,6 @@ from rest_framework.serializers import ValidationError
 class recordSerializer(serializers.ModelSerializer):
     class Meta:
         model = record
-        fields = ('id','title','description')
+        fields = ('id','title','description','user')
 
 
