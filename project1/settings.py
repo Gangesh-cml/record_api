@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # 'api.apps.ApiConfig',
     'record_api'
+    ,'login',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
